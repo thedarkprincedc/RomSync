@@ -1,0 +1,38 @@
+<div class="medium-12 columns" ng-cloak>
+        <ul class="breadcrumbs itemtext" style="margin:0px;">
+             <li><a ng-click="cancel()">RomSync2</a></li>
+             <li class="unavailable"><a>{{vm.item.system}}</a></li>
+             <li class="unavailable"><a href="#">{{vm.item.name}}</a></li>
+        </ul>
+        <h3 class="itemtext">{{vm.item.name}}&nbsp;
+             <span ng-show="vm.item.year">({{vm.item.year}})</span>
+             <span class="label {{(vm.isPrimary)?'success':'warning'}}" ng-show="">{{(vm.isPrimary)?'Primary':'Clone'}}</span>
+             <span class="label success" ng-show="isSynched">{{(isSynched)?"Synched":"Not Synched"}}</span>
+        </h3>
+   </div>
+   <div class="medium-4 columns">
+        <game-item-lg item="vm.item"></game-item-lg>
+   </div>
+   <div class="medium-8 columns">
+        <youtube-video src=vm.item.youtubeurl></youtube-video>
+   </div>
+   <div class="medium-12 columns">
+        <hr style="color:#aaaaaa;"/>
+   </div>
+   
+   <div class="row">
+        <div class="medium-4 columns itemtext" >
+             <span ng-if="vm.item.players"><b>Players:</b> {{vm.item.players}}<br/></span>
+             <span ng-if="vm.item.genre"><b>Genre(s):</b> {{vm.item.genre}}<br/></span>
+             <span ng-if="vm.item.manufacturer"><b>Manufacturer:</b> {{vm.item.manufacturer}}<br/></span>
+             <span ng-if="vm.item.year"><b>Year:</b> {{vm.item.year}}<br/></span>
+             <span ng-if="vm.item.cloneof==''"><b>Clone of:</b> {{currSelection.cloneof}}<br/></span>
+        </div>
+        <div class="medium-8 columns itemtext" style="padding-bottom:5px;">
+             <div class="modal-desc">
+                  <p style="Word-wrap: break-word;margin:0px;font-face:9pt;">{{vm.item.overview}}</p>
+             </div>
+        </div>
+   </div>
+   
+   <a class="close-reveal-modal" ng-click="vm.cancel()">&#215;</a>

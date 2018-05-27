@@ -1,0 +1,19 @@
+<a ng-mouseover="vm.isGameMouseOvered($event, true)" ng-mouseleave="vm.isGameMouseOvered($event, false)">
+    <div class="th gameCoverSmall" style="background-image:url({{vm.item.imageurl}});"></div>
+    <div class="gameCoverTitle itemtext">
+        <center>
+            <div ng-show="vm.item.name">{{vm.item.name}}</div>
+            <span ng-show="vm.item.manufacturer">{{vm.item.manufacturer}}
+                <span ng-show="vm.item.year">({{vm.item.year}})</span>
+            </span>
+        </center>
+    </div>
+</a>
+
+    <!-- <input type="checkbox" 
+    mg-model="vm.isGameChecked" 
+    ng-true-value="true" 
+    ng-false-value="false"
+    ng-init="false" 
+    ng-click="vm.onGameChecked($event, vm.game)" 
+    ng-show="vm.hover==true||vm.isGameChecked==true" /> -->

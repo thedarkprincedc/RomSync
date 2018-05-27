@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Data>
+<baseImgUrl>http://legacy.thegamesdb.net/banners/</baseImgUrl>
+<Game>
+<id>8597</id>
+<GameTitle>Street Fighter III: 3rd Strike</GameTitle>
+<AlternateTitles><title>Street Fighter III: 3rd Strike</title><title>Street Fighter III: Third Strike</title><title>Street Fighter III 3rd Strike</title><title>Street Fighter III 3rd Strike: Fight for the Future</title></AlternateTitles><PlatformId>23</PlatformId>
+<Platform>Arcade</Platform>
+<ReleaseDate>05/12/1999</ReleaseDate>
+<Overview>Street Fighter III 3rd Strike: Fight for the Future is a 2D competitive fighting game produced by Capcom originally released for the arcade in 1999. It is the second follow-up to Street Fighter III, following Street Fighter III 2nd Impact. Like its predecessors, it runs on the CP System III hardware. 3rd Strike increased the character roster by adding five new characters, including Chun-Li. It also added further refinements to the previous game's play mechanics and rules. It was ported to the Dreamcast, PlayStation 2, and Xbox. A downloadable online version titled Street Fighter III: 3rd Strike Online Edition was released on PlayStation Network and Xbox Live Arcade in August 2011.</Overview>
+<Genres><genre>Fighting</genre></Genres><Players>2</Players><Co-op>No</Co-op>
+<Publisher>Capcom</Publisher>
+<Developer>Capcom</Developer>
+<Rating>9</Rating><Similar><SimilarCount>1</SimilarCount><Game><id>9971</id><PlatformId>16</PlatformId></Game></Similar><Images>
+<fanart>
+<original width="1920" height="1080">fanart/original/8597-1.jpg</original>
+<thumb>fanart/thumb/8597-1.jpg</thumb>
+</fanart>
+<fanart>
+<original width="1920" height="1080">fanart/original/8597-2.jpg</original>
+<thumb>fanart/thumb/8597-2.jpg</thumb>
+</fanart>
+<fanart>
+<original width="1920" height="1080">fanart/original/8597-3.jpg</original>
+<thumb>fanart/thumb/8597-3.jpg</thumb>
+</fanart>
+<boxart side="front" width="595" height="822" thumb="boxart/thumb/original/front/8597-1.jpg">boxart/original/front/8597-1.jpg</boxart>
+<screenshot>
+<original width="490" height="285">screenshots/8597-1.jpg</original>
+<thumb>screenshots/thumb/8597-1.jpg</thumb>
+</screenshot>
+<clearlogo width="400" height="194">clearlogo/8597.png</clearlogo></Images>
+</Game>
+</Data>

@@ -1,0 +1,8 @@
+<li class="has-dropdown not-click">
+    <a><i class="fi-thumbnails"></i>&nbsp<b>{{vm.currentSystem.name}}</b></a>
+    <ul class="dropdown">
+        <li ng-repeat="system in vm.systems">
+            <a ng-click="vm.onSelectSystem($event, system)">{{system.name}}</a>
+        </li>
+    </ul>            
+</li>

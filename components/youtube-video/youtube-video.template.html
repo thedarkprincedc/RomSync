@@ -1,0 +1,12 @@
+<div class="widescreen" 
+    class="youtube-frame-blank"
+    ng-style="vm.style" 
+    style="box-shadow: 2px 2px 4px black;">
+    <iframe 
+        ng-src="{{vm.src|trusted}}"
+        frameborder="0"
+        {{(vm.allowfullscreen)?"allowfullscreen":""}}
+        width="{{vm.width}}"
+        height="{{vm.height}}">
+    </iframe>
+</div>
