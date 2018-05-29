@@ -11,26 +11,29 @@
             // }
         });
 
-    GameListController.$inject = ['$scope', "amazonS3", "$http", "URIS", "$modal", "gamesdb"];
-    function GameListController($scope, amazonS3, $http, URIS, $modal, gamesdb) {
+    GameListController.$inject = ['$scope', "amazonS3", "$http", "URIS", "$modal", "gamesdb", "romsync"];
+    function GameListController($scope, amazonS3, $http, URIS, $modal, gamesdb, romsync) {
         var vm = this;
         this.games = [];
+        vm.currentSystem = null;
         vm.onItemClicked = onItemClicked;
         vm.onScrollNextPage = onScrollNextPage;
         vm.scrollDisabled = false;
         vm.scrollDistance = vm.scrollDistance || 2;
         vm.scrollPage = 0;
         // vm.gamelistUpdated = gamelistUpdated;
-        ////////////////
+        $scope.$on("$stateChangeSuccess",function(event, next, current){
+            romsync.getPlatformType().then(function(response){
+                vm.currentSystem = response;
+            });
+        });
 
+        ////////////////
         vm.$onInit = function() { 
-            onScrollNextPage();
-            // $http.get(URIS.GAME_SEARCH_URL).then(function(response){
-            //     vm.games = response.data.map(function(value){
-            //         value.imageurl = amazonS3.getImage(value.filename);
-            //         return value;
-            //     });
-            // });
+            romsync.getPlatformType().then(function(response){
+                vm.currentSystem = response;
+                onScrollNextPage();
+            });
         };
         vm.$onChanges = function(changesObj) {  };
         vm.$onDestroy = function() { };
@@ -39,7 +42,7 @@
             //item.platform
             gamesdb.search({
                 name: item.name,
-                platform: "arcade"
+                platform: vm.currentSystem.name
             }).then(function(response){
                 angular.extend(item, response);
             })
@@ -60,7 +63,7 @@
                 var params = {
                     page: vm.scrollPage,
                     limit: 25,
-                    system: "arcade"
+                    system: vm.currentSystem.code
                 };
                 
                 $http({ 
@@ -93,11 +96,13 @@
         //     vm.scrollDisabled = false;
         // }
     }
-    GameModelController.$inject = ['item'];
-    function GameModelController(item) {
-       
+    GameModelController.$inject = ['$scope','item'];
+    function GameModelController($scope, item) {
         var vm = this;
         vm.item = item;
+        vm.close = function(){
+            debugger;
+        }
         // ////////////////
         vm.$onInit = function() { };
         vm.$onChanges = function(changesObj) { };

@@ -10,6 +10,7 @@ require.config({
         "gameitem.sm": "components/game/item/game-item-sm.controller",
         "gameitem.lg": "components/game/item/game-item-lg.controller",
         "gameitem.list": "components/game/list/game-list.controller",
+        "search.input": "components/search-input/search-input.controller",
         "youtube.video": "components/youtube-video/youtube-video.controller",
         "pages.search-view": "components/pages/search-view.controller",
         "amazons3.service": "components/services/amazons3.service",
@@ -25,6 +26,7 @@ require([
     "gameitem.sm",
     "gameitem.lg",
     "gameitem.list",
+    "search.input",
     "youtube.video",
     "pages.search-view",
     "amazons3.service",
@@ -32,5 +34,7 @@ require([
 ], function(){
     angular.element(document).ready(function() {
         angular.bootstrap(document, ['app.module']);
+        $(document).foundation('topbar', 'reflow');
+        $(document).foundation();
     });
 });

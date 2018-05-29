@@ -3,11 +3,11 @@
         .config(router);
     router.$inject = ['$stateProvider', '$urlRouterProvider'];
     function router($stateProvider, $urlRouterProvider){
-       
         $stateProvider.state('index', {
-            url: '/system/{id}',
+            url: '/system/:id/:name',
             params: {
-                id: null
+                id: {squash: false, value: null},
+                name: {squash: true, value: null}
             },
             templateUrl: '../../components/pages/search-view.template.html',
             controller: 'SearchView',

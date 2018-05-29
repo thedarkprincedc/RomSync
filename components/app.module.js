@@ -1,6 +1,5 @@
 (function(){
     angular.module("app.module",[
-        "ui.router",
         "app.routes",
         "app.constants",
         "mm.foundation"
@@ -8,11 +7,6 @@
     .run(run);
 
     config.$inject = ['$httpProvider'];
-
-    function config($httpProvider){ 
-
-    }
-    function run(){ 
-
-    }
+    function config($httpProvider){ }
+    function run(){ }
 })();
