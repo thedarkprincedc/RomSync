@@ -1,6 +1,6 @@
 <dl class="sub-nav">
     <dt class="sub-nav">{{vm.title}}</dt>
-    <dd ng-repeat="item in vm.years" ng-click="vm.onClickYear(item)" class="{{(this.item.active)?'active':''}}">
+    <dd ng-repeat="item in vm.years" ng-click="vm.onClickYear($event, item)" class="{{(this.item.active)?'active':''}}">
         <a>{{item}}</a>
     </dd>
 </dl>

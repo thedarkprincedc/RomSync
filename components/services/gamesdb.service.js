@@ -4,8 +4,8 @@
         .module('app.module')
         .service('gamesdb', GamesDbService);
 
-    GamesDbService.$inject = ['URIS', '$http'];
-    function GamesDbService(URIS, $http) {
+    GamesDbService.$inject = ['URIS', '$http', 'romsync'];
+    function GamesDbService(URIS, $http, romsync) {
         var service = {};
         service.search = search;
         return service;
@@ -29,7 +29,7 @@
                 var coop = games.find("Co-op")[0].textContent;
                 var youtube = null;
                 if(games.find("Youtube")[0]){
-                    youtube = games.find("Youtube")[0].textContent
+                    youtube = romsync.translateYoutubeUrlToEmbed(games.find("Youtube")[0].textContent)
                 }
                 return {
                     overview: overview,

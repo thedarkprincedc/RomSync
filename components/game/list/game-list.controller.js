@@ -39,7 +39,6 @@
         vm.$onDestroy = function() { };
         
         function onItemClicked(event, item){
-            //item.platform
             gamesdb.search({
                 name: item.name,
                 platform: vm.currentSystem.name
@@ -48,7 +47,7 @@
             })
             $modal.open({
                 templateUrl: "../components/modals/game-modal.template.html",
-                controller: GameModelController,
+                controller: "gameModal",
                 controllerAs: "vm",
                 resolve: {
                     item: function(){
@@ -95,17 +94,5 @@
         // function gamelistUpdated(){
         //     vm.scrollDisabled = false;
         // }
-    }
-    GameModelController.$inject = ['$scope','item'];
-    function GameModelController($scope, item) {
-        var vm = this;
-        vm.item = item;
-        vm.close = function(){
-            debugger;
-        }
-        // ////////////////
-        vm.$onInit = function() { };
-        vm.$onChanges = function(changesObj) { };
-        vm.$onDestroy = function() { };
     }
 })();

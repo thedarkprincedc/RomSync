@@ -14,13 +14,22 @@
     function FilterGametypeController($scope, $state) {
         var vm = this;
         vm.gametypes = [
-            {name: 'All' }, 
-            {name: 'Primary'}, 
-            {name: 'Clones'}
+            {
+                name: 'All',
+                code: '' 
+            }, 
+            {
+                name: 'Primary',
+                code: 'primary'
+            }, 
+            {
+                name: 'Clones',
+                code: "clones"
+            }
         ];
         vm.onSystemItemClicked = onSystemItemClicked;
         $scope.$on("$stateChangeSuccess", function(event, next, current){
-            
+            debugger;
         });
 
         function onSystemItemClicked(item){
@@ -28,6 +37,7 @@
                 value.active = false; 
             });
             item.active = true;
+            $state.go("index", {gameType: item.code});
         }
         //////////////////
         vm.$onInit = function() {

@@ -19,7 +19,9 @@ require.config({
         "pages.search-view": "components/pages/search-view.controller",
         "amazons3.service": "components/services/amazons3.service",
         "gamesdb.service": "components/services/gamesdb.service",
-        "romsync.service": "components/services/romsync.service"
+        "romsync.service": "components/services/romsync.service",
+        "trusted.filter": "components/filters/trusted.filter",
+        "game.modal": "components/modals/game-modal.controller"
     }
 });
 require([
@@ -41,7 +43,9 @@ require([
     "pages.search-view",
     "amazons3.service",
     "gamesdb.service",
-    "romsync.service"
+    "romsync.service",
+    "trusted.filter",
+    "game.modal"
 ], function(){
     angular.element(document).ready(function() {
         angular.bootstrap(document, ['romsync.server']);

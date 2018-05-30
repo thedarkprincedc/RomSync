@@ -1,6 +1,7 @@
 <script type="text/ng-template" id="customTemplate.html">
     <a ng-if="match.model.isGroup&&!match.model.id">
           <span>{{match.model.name| uppercase}}</span>
+          
     </a>
     <a ng-if="!match.model.isGroup">
           <span 
@@ -8,6 +9,7 @@
                 bind-html-unsafe="match.label | typeaheadHighlight:query">
           </span>
     </a>
+    
     <!-- <ul>
           <li>ffff</li>
     </ul> -->

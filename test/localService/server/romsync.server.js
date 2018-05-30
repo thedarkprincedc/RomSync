@@ -4,7 +4,7 @@
         .run(endpoints);
     function endpoints($httpBackend, $location){
         $httpBackend.whenGET(/http\:\/\/thegamesdb\.net\/api\/GetGame.php?.*/)
-            .respond(respondWithFile("./localService/mockdata/GetGamesList.xml"));
+            .respond(respondWithFile("./localService/mockdata/gamesdb/GetGamesList.xml"));
         // $httpBackend.whenGET(/\/api\/games?.*/)
         //     .respond(respondWithFile("./localService/mockdata/games-list.json"));
         $httpBackend.whenGET(/\/api\/games?.*/)

@@ -4,11 +4,13 @@
     router.$inject = ['$stateProvider', '$urlRouterProvider'];
     function router($stateProvider, $urlRouterProvider){
         $stateProvider.state('index', {
-            url: '/system/:id/:name?gameType',
+            url: '/system/:id/:name?gameType?year?decade',
             params: {
                 id: {squash: false, value: null},
                 name: {squash: true, value: null},
-                gameType: {squash: true, value: null}
+                gameType: {squash: true, value: null},
+                year: {squash: true, value: null},
+                decade: {squash: true, value: null},
             },
             templateUrl: '../../components/pages/search-view.template.html',
             controller: 'SearchView',

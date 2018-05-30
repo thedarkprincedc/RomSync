@@ -8,6 +8,7 @@
     function RomsyncService($http, URIS, $q, $state) {
         var service = {};
         service.systems = null;
+        service.translateYoutubeUrlToEmbed = translateYoutubeUrlToEmbed;
         service.getPlatformType = function(){
             return service.getSystems().then(function(response){
                return findSystemByCode(response, $state.params.id);
@@ -29,6 +30,11 @@
                 return value.code == code;
             });
             return system[0];
+        }
+        function translateYoutubeUrlToEmbed(url){
+            var url = new URL(url);
+            var id = url.searchParams.get('v');
+            return URIS.YOUTUBE_EMBED_URL + id;
         }
     }
 })();
