@@ -17,11 +17,13 @@ require.config({
         "youtube.video": "components/youtube-video/youtube-video.controller",
         "dropdown.selector": "components/dropdown-selector/dropdown-selector.controller",
         "pages.search-view": "components/pages/search-view.controller",
+        "pages.login-view": "components/pages/login-view.controller",
         "amazons3.service": "components/services/amazons3.service",
         "gamesdb.service": "components/services/gamesdb.service",
         "romsync.service": "components/services/romsync.service",
         "trusted.filter": "components/filters/trusted.filter",
         "game.modal": "components/modals/game-modal.controller"
+
     }
 });
 require([
@@ -40,6 +42,7 @@ require([
     "search.input",
     "youtube.video",
     "dropdown.selector",
+    "pages.login-view",
     "pages.search-view",
     "amazons3.service",
     "gamesdb.service",

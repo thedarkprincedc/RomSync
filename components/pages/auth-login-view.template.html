@@ -1,5 +1,5 @@
 <div class="login-dialog small-6">
-        <form>
+        <form id="login-form">
             <div class="row">
                 <div class="small-12 columns">
                     <h2>RomSync2</h2>
@@ -18,21 +18,21 @@
             <div class="row">
                 <div class="small-12 columns">
                     <label for="username">User Name
-                        <input type="text" class="form-control" ng-model="vm.username" />
+                        <input type="text" name="username" class="form-control" ng-model="vm.username" />
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="small-12 columns">
                     <label>Password
-                        <input type="password" class="form-control" ng-model="vm.password" />
+                        <input type="password" name="password" class="form-control" ng-model="vm.password" />
                     </label>
                 </div>
             </div>
     
             <div class="row">
                 <div class="small-4 large-4 columns">
-                    <a class="button tiny" ng-click="vm.onClickSubmit(vm.username, vm.password)">Submit</a>
+                    <a class="button tiny" ng-click="vm.onSubmitClick({username: vm.username, password: vm.password})">Submit</a>
                 </div>
             </div>
         </form>

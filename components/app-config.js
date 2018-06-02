@@ -17,16 +17,20 @@ require.config({
         "youtube.video": "components/youtube-video/youtube-video.controller",
         "dropdown.selector": "components/dropdown-selector/dropdown-selector.controller",
         "pages.search-view": "components/pages/search-view.controller",
+        "pages.login-view": "components/pages/auth-login-view.controller",
+        "pages.register-view": "components/pages/auth-register-view.controller",
         "amazons3.service": "components/services/amazons3.service",
         "gamesdb.service": "components/services/gamesdb.service",
-        "romsync.service": "components/services/romsync.service"
+        "romsync.service": "components/services/romsync.service",
+        "trusted.filter": "components/filters/trusted.filter",
+        "game.modal": "components/modals/game-modal.controller",
+        "auth.intercepter.service": "components/services/auth.intercepter.service"
     }
 });
 require([
     "app.routes",
     "app.constants",
     "app.module",
-    "header",
     "header",
     "footer",
     "footer.filter.gametype",
@@ -38,10 +42,15 @@ require([
     "search.input",
     "youtube.video",
     "dropdown.selector",
+    "pages.login-view",
+    "pages.register-view",
     "pages.search-view",
     "amazons3.service",
     "gamesdb.service",
-    "romsync.service"
+    "romsync.service",
+    "trusted.filter",
+    "game.modal",
+    "auth.intercepter.service"
 ], function(){
     angular.element(document).ready(function() {
         angular.bootstrap(document, ['app.module']);
