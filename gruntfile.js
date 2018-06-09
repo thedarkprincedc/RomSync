@@ -44,7 +44,8 @@ module.exports = function(grunt) {
                         bundle: [
                             'build/libs/library.js',
                             'build/components/**/*.js',
-                            'build/components/app.templates.js'
+                            'build/components/app.templates.js',
+                            '!build/**/*.spec.js'
                         ],
                         main: "app.start.js"
                     }
