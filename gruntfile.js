@@ -45,9 +45,11 @@ module.exports = function(grunt) {
                             'build/libs/library.js',
                             'build/components/**/*.js',
                             'build/components/app.templates.js',
-                            '!build/**/*.spec.js'
+                            '!build/**/*.spec.js',
+                            '!build/components/app.constants.js'
                         ],
-                        main: "app.start.js"
+                        main: "app.start.js",
+                        constant: "build/components/app.constants.js"
                     }
                 }
             }
