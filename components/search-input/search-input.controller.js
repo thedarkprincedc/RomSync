@@ -22,7 +22,7 @@
 
         vm.currentSystem = null;
         $scope.$on("$stateChangeSuccess",function(event, next, current){
-            debugger;
+      
             romsync.getPlatformType().then(function(response){
                 vm.currentSystem = response;
             });
@@ -37,7 +37,7 @@
         vm.$onChanges = function(changesObj) { };
         vm.$onDestroy = function() { };
         function onSelectChange(value) {
-            debugger;
+
             $state.go("index", {name: value.name});
              // gamesdb.search({
             //     name: item.name,

@@ -14,7 +14,7 @@
                 year: {squash: true, value: null},
                 decade: {squash: true, value: null},
             },
-            templateUrl: '../../components/pages/search-view.template.html',
+            templateUrl: '../components/pages/search-view.template.html',
             controller: 'SearchView',
             controllerAs: 'vm',
             restrictions:{
@@ -26,7 +26,7 @@
         $stateProvider.state('login', {
             url: '/login',
             params: {},
-            templateUrl: '../../components/pages/auth-login-view.template.html',
+            templateUrl: '../components/pages/auth-login-view.template.html',
             controller: 'LoginView',
             controllerAs: 'vm',
             restrictions:{
@@ -38,7 +38,7 @@
         $stateProvider.state('register', {
             url: '/register',
             params: {},
-            templateUrl: '../../components/pages/auth-register-view.template.html',
+            templateUrl: '../components/pages/auth-register-view.template.html',
             controller: 'RegisterView',
             controllerAs: 'vm',
             restrictions:{

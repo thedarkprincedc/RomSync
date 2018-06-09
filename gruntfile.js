@@ -19,6 +19,7 @@ module.exports = function(grunt) {
                 files: [
                     { expand: true, src: [
                         './**',
+                        '!./components/**/*.html',
                         '!./test/**',
                         '!./node_modules/**',
                         '!./gruntfile.js',

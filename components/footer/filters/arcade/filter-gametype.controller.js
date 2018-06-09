@@ -29,7 +29,7 @@
         ];
         vm.onSystemItemClicked = onSystemItemClicked;
         $scope.$on("$stateChangeSuccess", function(event, next, current){
-            debugger;
+      
         });
 
         function onSystemItemClicked(item){

@@ -17,7 +17,7 @@
     function YoutubeVideoController() {
         var vm = this;
         //vm.src = romsync.translateYoutubeUrlToEmbed(vm.src);
-        //debugger;
+
         vm.height = vm.height || "350px";
         vm.width = vm.width || "100%"
         var defaultStyle = {

@@ -7,7 +7,7 @@
         var vm = this;
         vm.item = item;
         vm.close = function(){
-            debugger;
+   
         }
         // ////////////////
         vm.$onInit = function() { };
