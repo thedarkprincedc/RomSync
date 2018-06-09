@@ -24,7 +24,9 @@ module.exports = function(grunt) {
                         '!./gruntfile.js',
                         '!./karma.conf.js',
                         '!./package-lock.json',
-                        '!./package.json'
+                        '!./package.json',
+                        '!./components/app-config.js',
+                        '!**/*.spec.js'
                     ], dest: 'build/'}
                 ]
             }
@@ -39,9 +41,12 @@ module.exports = function(grunt) {
                     relative: true,
                     basePath: false,
                     scripts: {
-                        layout: {
-                            header: 'build/components/app.templates.js',
-                        }
+                        bundle: [
+                            'build/libs/library.js',
+                            'build/components/**/*.js',
+                            'build/components/app.templates.js'
+                        ],
+                        main: "app.start.js"
                     }
                 }
             }
