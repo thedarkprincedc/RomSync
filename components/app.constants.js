@@ -13,7 +13,6 @@
             GAMESDB_SEARCH: "/api/gamesdb/search",
             YOUTUBE_SEARCH: "/api/youtube/search",
             YOUTUBE_EMBED_URL: "https://www.youtube.com/embed/",
-            AMAZON_S3_BUCKET_URL: "https://s3-us-west-2.amazonaws.com/media.thedarkprincedc.com/images/",
-         
+            AMAZON_S3_BUCKET_URL: "https://s3-us-west-2.amazonaws.com/media.thedarkprincedc.com/images/"     
         });
 })(this);
