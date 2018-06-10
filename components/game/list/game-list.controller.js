@@ -44,7 +44,7 @@
                 platform: vm.currentSystem.name
             }).then(function(response){
                 angular.extend(item, response);
-            })
+            });
             $modal.open({
                 templateUrl: "../components/modals/game-modal.template.html",
                 controller: "gameModal",
