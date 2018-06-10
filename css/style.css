@@ -151,7 +151,7 @@ pre{
 
 	z-index: 3;
 	position: relative;
-	//margin-top: -75px;
+	/* //margin-top: -75px; */
 	padding: 10px;
 	color: white;
 	font-size: .75em;
@@ -290,7 +290,7 @@ pre{
 .reveal-modal{
 	background-color: #333333;
 	border: 1px;
-	top:60px;
+	/* top:60px; */
 
 }
 .reveal-modal:focus{
@@ -362,4 +362,10 @@ outline: none;
 }
 .ttab{
 	margin-left: 10px;
+}
+
+.reveal-modal-bg{position:fixed;}
+.reveal-modal{
+	position:fixed;
+	top: 32px !important;
 }

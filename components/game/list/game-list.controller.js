@@ -19,10 +19,11 @@
         vm.onItemClicked = onItemClicked;
         vm.onScrollNextPage = onScrollNextPage;
         vm.scrollDisabled = false;
-        vm.scrollDistance = vm.scrollDistance || 2;
+        vm.scrollDistance = vm.scrollDistance || 0;
         vm.scrollPage = 0;
         // vm.gamelistUpdated = gamelistUpdated;
         $scope.$on("$stateChangeSuccess",function(event, next, current){
+      
             romsync.getPlatformType().then(function(response){
                 vm.currentSystem = response;
             });
@@ -57,25 +58,29 @@
             });
         }
         function onScrollNextPage(){
-            if(!vm.scrollDisabled){
-                vm.scrollDisabled = true;
+            console.log("onScrollplann");
+            // if(!vm.scrollDisabled){
+            //     vm.scrollDisabled = true;
                 var params = {
                     page: vm.scrollPage,
-                    limit: 25,
-                    system: vm.currentSystem.code
+                    limit: 50,
+                    system: vm.currentSystem.code,
+                    gameType: 'primary'
                 };
                 
                 $http({ 
                     url: URIS.GAME_SEARCH_URL,
                     params: params
                 }).then(function(response){
+                 
                     vm.games = response.data.map(function(value){
                         value.imageurl = amazonS3.getImage(value.filename);
                         return value;
                     });
+                    vm.scrollDisabled = false;
                 });
-                vm. scrollPage++;
-            }
+                vm.scrollPage++;
+           // }
            
         }
         // function onClickGameItem(game){

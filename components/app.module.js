@@ -3,6 +3,7 @@
         "app.routes",
         "app.constants",
         "mm.foundation",
+        "ui.scroll",
         "LocalStorageModule"
     ]).config(config)
     .run(run);
