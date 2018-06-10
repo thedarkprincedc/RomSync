@@ -22,9 +22,11 @@
 
         vm.currentSystem = null;
         $scope.$on("$stateChangeSuccess",function(event, next, current){
+      
             romsync.getPlatformType().then(function(response){
                 vm.currentSystem = response;
             });
+           
         });
         //////////////
         vm.$onInit = () => { 
@@ -34,32 +36,50 @@
         };
         vm.$onChanges = function(changesObj) { };
         vm.$onDestroy = function() { };
-        function onSelectChange(item) {
+        function onSelectChange(value) {
 
             $state.go("index", {name: value.name});
-            gamesdb.search({
-                name: item.name,
-                platform: vm.currentSystem.name
-            }).then(function(response){
-                angular.extend(item, response);
-            });
+             // gamesdb.search({
+            //     name: item.name,
+            //     platform: vm.currentSystem.name
+            // }).then(function(response){
+            //     angular.extend(item, response);
+            // })
+            // $modal.open({
+            //     templateUrl: "../components/modals/game-modal.template.html",
+            //     controller: "gameModal",
+            //     controllerAs: "vm",
+            //     resolve: {
+            //         item: function(){
+            //             return value;
+            //         }
+            //     }
+            // });
+
+            // $state.go("index", {name: item.name});
+            // gamesdb.search({
+            //     name: item.name,
+            //     platform: vm.currentSystem.name
+            // }).then(function(response){
+            //     angular.extend(item, response);
+            // });
           
-            var modalInstance = $modal.open({
-                templateUrl: "../components/modals/game-modal.template.html",
-                controller: "gameModal",
-                controllerAs: "vm",
-                resolve: {
-                    item: function(){
-                        return item;
-                    }
-                }
-            });
-            modalInstance.result.then(function (selectedItem) {
-                $state.go("index", {name: null});
-                //$ctrl.selected = selectedItem;
-            }, function () {
-                //$log.info('modal-component dismissed at: ' + new Date());
-            });
+            // var modalInstance = $modal.open({
+            //     templateUrl: "../components/modals/game-modal.template.html",
+            //     controller: "gameModal",
+            //     controllerAs: "vm",
+            //     resolve: {
+            //         item: function(){
+            //             return item;
+            //         }
+            //     }
+            // });
+            // modalInstance.result.then(function (selectedItem) {
+            //     $state.go("index", {name: null});
+            //     //$ctrl.selected = selectedItem;
+            // }, function () {
+            //     //$log.info('modal-component dismissed at: ' + new Date());
+            // });
         }
         function getItemList(value){
             return $http({
