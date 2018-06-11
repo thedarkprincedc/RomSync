@@ -22,7 +22,7 @@
 
         vm.currentSystem = null;
         $scope.$on("$stateChangeSuccess",function(event, next, current){
-            //event.preventDefault();
+        
             romsync.getPlatformType().then(function(response){
                 vm.currentSystem = response;
             });
@@ -48,8 +48,8 @@
                 }
             });
             modalInstance.result.then(function (selectedItem) {
-                // $state.go("index", {name: null});
-                // vm.selected = "";
+                $state.go("index", {name: null});
+                vm.selected = "";
             }, function () {
                 // $state.go("index", {name: null});
                 // vm.selected = "";
