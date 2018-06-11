@@ -85,7 +85,29 @@ module.exports = function(grunt) {
                 {expand: true, flatten: true, src: ['build/index.html'], dest: 'build/'}
               ]
             }
-          }
+        },
+        concat: {
+            libs: {
+                src: [
+                    "node_modules/jquery/dist/jquery.js",
+                    "node_modules/lodash/lodash.js",
+                    "node_modules/npm-modernizr/modernizr.js",
+                    "node_modules/zurb-foundation-5/js/foundation/foundation.js",
+                    "node_modules/zurb-foundation-5/js/foundation/foundation.magellan.js",
+                    "node_modules/angular/angular.js",
+                    "node_modules/angular-sanitize/angular-sanitize.js",
+                    "node_modules/angular-animate/angular-animate.js",
+                    "node_modules/angular-mocks/angular-mocks.js",
+                    "node_modules/angular-local-storage/dist/angular-local-storage.js",
+                    "node_modules/angular-ui-router/release/angular-ui-router.js",
+                    "node_modules/checklist-model/checklist-model.js",
+                    "node_modules/ng-infinite-scroll/build/ng-infinite-scroll.js",
+                    "node_modules/angular-ui-scroll/dist/ui-scroll.js",
+                    "libs/vendor/mm-foundation-tpls-0.8.0.js"
+                ],
+                dest: 'libs/library.js'
+            }
+        },
     });
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -93,6 +115,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-html-build');
     grunt.loadNpmTasks('grunt-replace');
+
+    grunt.registerTask("cc", ['concat:libs']);
     grunt.registerTask("cleanStage", ['clean:cleanStage']);
     grunt.registerTask('default', ['clean:build','copy:build', 'ngtemplates:app.module', 'htmlbuild:build', 'replace:dist']);
 }
