@@ -16,6 +16,9 @@ module.exports = function(grunt) {
         clean: {
             build: {
               src: ['./build']
+            },
+            cleanStage:{
+                src: ['/var/webdev/romsync', '/var/webdev/romsync-server']
             }
         },
         ngtemplates:  {
@@ -90,6 +93,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-html-build');
     grunt.loadNpmTasks('grunt-replace');
-
+    grunt.registerTask("cleanStage", ['clean:cleanStage']);
     grunt.registerTask('default', ['clean:build','copy:build', 'ngtemplates:app.module', 'htmlbuild:build', 'replace:dist']);
 }
