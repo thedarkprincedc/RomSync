@@ -8,19 +8,19 @@
             </span>
     </a>
 </script>
+
+<!-- typeahead-template-url="customTemplate.html" searchbox-->
 <li class="has-form" style="width:400px;">
     <div class="row collapse">
-          <div class="small-10 columns">
-                <input type="text"
-                      class="form-control searchbox"
-                      data-ng-model="vm.selected"
-                      data-typeahead="item as item.name for item in vm.getItemList({q: $viewValue, system: vm.currentSystem.code})"
-                      data-typeahead-on-select="vm.onSelectChange(vm.selected)"
-                      data-typeahead-wait-ms="vm.typeaheadWaitTime"
-                      typeahead-min-length="3"
-                      placeholder="{{vm.placeholder}}"
-                      typeahead-template-url="customTemplate.html">
-                <i ng-show="vm.loadingLocations" class="glyphicon glyphicon-refresh"></i>
-          </div>
+            <div class="small-10 columns">
+            <input type="text" class="form-control"
+                  ng-model="vm.selected"
+                  typeahead="item as item.name for item in vm.onSearchTypeAhead($viewValue, vm.currentSystem.code)"
+                  typeahead-wait-ms="vm.typeaheadWaitTime || 450"
+                  typeahead-min-length="3"
+                  typeahead-on-select="vm.onSelectChange(vm.selected)"
+                  />
+            <i ng-show="vm.loadingLocations" class="glyphicon glyphicon-refresh"></i>
+            </div>
     </div>
 </li>

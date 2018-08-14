@@ -59,11 +59,11 @@
         }
         function onScrollNextPage(){
             // if(!vm.scrollDisabled){
-            //     vm.scrollDisabled = true;'
+            //     vm.scrollDisabled = true;''system: vm.currentSystem.code,
                 var params = {
                     page: vm.scrollPage,
                     limit: 50,
-                    system: vm.currentSystem.code,
+                    
                     gameType: $state.params.gameType
                 };
                 
@@ -72,7 +72,6 @@
                     params: params
                 }).then(function(response){
                     response.data.map(function(value){
-                        debugger;
                         value.imageurl = amazonS3.getImage(value.filename);
                         return value;
                     }).forEach(element => {

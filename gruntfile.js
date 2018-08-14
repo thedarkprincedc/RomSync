@@ -103,19 +103,66 @@ module.exports = function(grunt) {
                     "node_modules/checklist-model/checklist-model.js",
                     "node_modules/ng-infinite-scroll/build/ng-infinite-scroll.js",
                     "node_modules/angular-ui-scroll/dist/ui-scroll.js",
-                    "libs/vendor/mm-foundation-tpls-0.8.0.js"
+                    "libs/vendor/mm-foundation-tpls-0.8.0.js",
+                    "node_modules/ag-grid/dist/ag-grid.js"
                 ],
                 dest: 'libs/library.js'
             }
         },
+        protractor: {
+            options: {
+              configFile: "./protractor.conf.js", // Default config file
+              noColor: false, // If true, protractor will not use colors in its output.
+              args: {
+                // Arguments passed to the command
+              }
+            },
+            e2e: {
+                options: {
+                  // Stops Grunt process if a test fails
+                  keepAlive: false
+                }
+              },
+            continuous: {
+                options: {
+                  keepAlive: true
+                }
+            }
+        },
+        karma: {
+            unit: {
+              configFile: 'karma.conf.js',
+              singleRun: true,
+            }
+        },
+        connect: {
+            options: {
+              port: 9000,
+              hostname: 'localhost'
+            },
+            test: {
+              options: {
+                // set the location of the application files
+                base: ['./']
+              }
+            }
+          }
     });
+    grunt.loadNpmTasks('grunt-contrib-connect');
+
+    grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-html-build');
     grunt.loadNpmTasks('grunt-replace');
+    
+    grunt.registerTask("e2e", ['protractor:e2e']);
+    grunt.registerTask("unit", ['karma:unit']); 
 
+    grunt.registerTask("alltest", ['connect:test','protractor:e2e', 'karma:unit']);
     grunt.registerTask("cc", ['concat:libs']);
     grunt.registerTask("cleanStage", ['clean:cleanStage']);
     grunt.registerTask('default', ['clean:build','copy:build', 'ngtemplates:app.module', 'htmlbuild:build', 'replace:dist']);

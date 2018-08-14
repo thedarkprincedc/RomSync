@@ -6,6 +6,9 @@
         .constant("URIS", {
             GAME_SEARCH_URL:  apiUrl + "/api/games",
             GAME_SYSTEM_URL:  apiUrl + "/api/systems",
+            GAME_SYNC_DEVICE_URL: apiUrl + "/api/sync",
+            GAME_UNSYNC_DEVICE_URL: apiUrl + "/api/unsync",
+            GAME_GET_SYNC_DATA_URL: apiUrl + "/api/queue",
             GAME_YEARS_URL:  apiUrl + "/api/years",
             GAME_DECADES_URL:  apiUrl + "/api/decades",
             AUTH_LOGIN_URL:  apiUrl + "/auth/login",

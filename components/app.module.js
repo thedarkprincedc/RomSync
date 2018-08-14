@@ -1,11 +1,11 @@
 (function(){
-    angular.module("app.module",[
+    agGrid.initialiseAgGridWithAngular1(angular); 
+    angular.module("app.module",["mm.foundation",
         "app.routes",
         "app.constants",
-        "mm.foundation",
-        // "ui.scroll",
         'infinite-scroll',
-        "LocalStorageModule"
+        "LocalStorageModule",
+        "agGrid"
     ]).config(config)
     .run(run);
 
@@ -14,5 +14,5 @@
         $httpProvider.interceptors.push('AuthInterceptor');
     }
     function run(){ }
-           
+  
 })();

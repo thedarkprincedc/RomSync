@@ -23,6 +23,20 @@
             }
         });
 
+        $stateProvider.state('sync', {
+            url: '/sync?deviceId',
+            params: {
+                deviceId: {squash: true, value: null}
+            },
+            templateUrl: '../components/pages/sync-view.template.html',
+            controller: 'SyncView',
+            controllerAs: 'vm',
+            restrictions:{
+                ensureAuthenticated: false,
+                loginRedirect: true
+            }
+        });
+
         $stateProvider.state('login', {
             url: '/login',
             params: {},

@@ -1,3 +1,8 @@
 <div class="th gameCoverLarge" style="background-image:url({{vm.item.imageurl}});">
-    <a href="{{vm.item.downloadurl}}" class="button small">Download</a>
+    <columns small="12" large="6">
+        <a href="{{vm.item.downloadurl}}" class="button small">Download</a>
+    </columns>
+    <columns small="12" large="6">
+        <a href="#" ng-click="vm.syncDevice(vm.item)" class="button small">Syncronize</a>
+    </columns>
 </div>

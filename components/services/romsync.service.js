@@ -23,6 +23,18 @@
             }
             return $q.when(service.systems);
         }
+        service.syncWithDevice = function(data){
+            return $http({ 
+                method: "POST",
+                url: URIS.GAME_SYNC_DEVICE_URL,
+                params: {
+                    id: data.id,
+                    deviceId: data.deviceId
+                },
+            }).then(function(response){
+                return response;
+            });    
+        }
         return service;
        
         function findSystemByCode(systems, code){
@@ -36,5 +48,6 @@
             var id = url.searchParams.get('v');
             return URIS.YOUTUBE_EMBED_URL + id;
         }
+        
     }
 })();
