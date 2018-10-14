@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RomSync2 - Rom Web Management Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/foundation.min.css" />
+    <link rel="stylesheet" href="css/foundation-icons/foundation-icons.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- build:remove -->
+    <!-- <script src="../libs/library.js"></script> -->
+    <!-- /build -->
+</head>
+
+<body>
+    <header></header>
+    <ui-view class="main_content"></ui-view>
+    <!-- <div data-ui-view class="main_content"></div data-ui-view> -->
+    <!-- build:remove -->
+    <!-- <script data-main="components/app-config" src="../libs/vendor/require.js"></script> -->
+    <!-- /build -->
+
+    <!-- build:remove -->
+    <script type="text/javascript" src="libs/library.js"></script>
+    <script type="text/javascript" src="components/app.module.js"></script>
+    <script type="text/javascript" src="components/app.routes.js"></script>
+
+    <script type="text/javascript" src="components/dropdown-selector/dropdown-selector.controller.js"></script>
+    <script type="text/javascript" src="components/env.js"></script>
+    <script type="text/javascript" src="components/filters/trusted.filter.js"></script>
+    <script type="text/javascript" src="components/footer/filters/arcade/filter-gametype.controller.js"></script>
+    <script type="text/javascript" src="components/footer/filters/general/filter-decade.controller.js"></script>
+    <script type="text/javascript" src="components/footer/filters/general/filter-year.controller.js"></script>
+    <script type="text/javascript" src="components/footer/footer.controller.js"></script>
+    <script type="text/javascript" src="components/game/item/game-item-lg.controller.js"></script>
+    <script type="text/javascript" src="components/game/item/game-item-sm.controller.js"></script>
+    <script type="text/javascript" src="components/game/list/game-list.controller.js"></script>
+    <script type="text/javascript" src="components/header/header.controller.js"></script>
+    <script type="text/javascript" src="components/modals/game-modal.controller.js"></script>
+    <script type="text/javascript" src="components/pages/auth-login-view.controller.js"></script>
+    <script type="text/javascript" src="components/pages/auth-register-view.controller.js"></script>
+    <script type="text/javascript" src="components/pages/search-view.controller.js"></script>
+    <script type="text/javascript" src="components/pages/sync-view.controller.js"></script>
+    <script type="text/javascript" src="components/search-input/search-input.controller.js"></script>
+    <script type="text/javascript" src="components/services/amazons3.service.js"></script>
+    <script type="text/javascript" src="components/services/auth.intercepter.service.js"></script>
+    <script type="text/javascript" src="components/services/gamesdb.service.js"></script>
+    <script type="text/javascript" src="components/services/romsync.service.js"></script>
+    <script type="text/javascript" src="components/youtube-video/youtube-video.controller.js"></script>
+  
+    <script type="text/javascript">
+        (function (window) {
+            window.__env = {
+                //apiUrl: 'https://192.168.2.27/dev/romsync-server/public'
+                apiUrl: 'http://localhost:8080'
+            }
+            angular.element(document).ready(function () {
+                angular.bootstrap(document, ['app.module']);
+                $(document).foundation('topbar', 'reflow');
+                $(document).foundation();
+            });
+        })(this);
+    </script>
+
+    <script type="text/javascript">
+       (function(window) {
+    'use strict';
+    window.__env = window.__env || {};
+    var apiUrl = (window.__env.apiUrl) ? window.__env.apiUrl : '';
+    angular.module('app.constants', [])
+        .constant("URIS", {
+            GAME_SEARCH_URL:  apiUrl + "/api/games",
+            GAME_SYSTEM_URL:  apiUrl + "/api/systems",
+            GAME_SYNC_DEVICE_URL: apiUrl + "/api/sync",
+            GAME_UNSYNC_DEVICE_URL: apiUrl + "/api/unsync",
+            GAME_GET_SYNC_DATA_URL: apiUrl + "/api/queue",
+            GAME_YEARS_URL:  apiUrl + "/api/years",
+            GAME_DECADES_URL:  apiUrl + "/api/decades",
+            AUTH_LOGIN_URL:  apiUrl + "/auth/login",
+            AUTH_LOGOUT_URL:  apiUrl + "/auth/logout",
+            GAMESDB_SEARCH:  apiUrl + "/api/gamesdb/search",
+            YOUTUBE_SEARCH:  apiUrl + "/api/youtube/search",
+            YOUTUBE_EMBED_URL: "https://www.youtube.com/embed/",
+            AMAZON_S3_BUCKET_URL: "https://s3-us-west-2.amazonaws.com/media.thedarkprincedc.com/images/"     
+        });
+})(this);
+    </script>
+    <!-- /build -->
+
+    <!-- build:script bundle -->
+    <!-- /build -->
+
+    <!-- build:script inline main -->
+    <!-- /build -->
+
+    <!-- build:script inline constant -->
+    <!-- /build -->
+</body>
+
+</html>

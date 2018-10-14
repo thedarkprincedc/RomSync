@@ -1,0 +1,371 @@
+.youtube-frame-blank{
+	background-color: #000000;
+	background-image: url('css/default.svg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.breadcrumbs {
+	border-style: none;
+	background-color: transparent;
+	padding: 0px;
+}
+.breadcrumbs > li {
+	color: white;
+}
+input.searchbox{
+    border-radius: 2px;
+    background-color: #6c6c6c;
+    border: solid 1px #3c3c3c;
+    color: white;
+}
+input.searchbox:focus{
+	 background-color: #2c2c2c;
+	 border: solid 1px #3c3c3c;
+}
+div.scroll {
+    /*background-color: #00FFFF;*/
+    width: 100%;
+    height: 200px;
+    /*height: 100px;*/
+
+    overflow: scroll;
+}
+.modal-desc{
+	overflow: scroll;
+	height:175px;
+}
+
+.modal-desc::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+.modal-desc::-webkit-scrollbar-corner {
+	color: #272727;
+}
+.modal-desc::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+#loadingDiv{
+	position:fixed;
+	bottom: 50%;
+	right: 50%;
+	background-color:#333333;
+	/*top:0px;
+	right:0px;
+	width:100%;
+	height:100%;*/
+	/*background-color:#333333;*/
+/*	background-image:url('http://pulse.sindlab.com.pk//images/ajax-loading.gif');*/
+	background-repeat:no-repeat;background-position:center;
+	z-index:10000000;
+	/*opacity: 0.4;*/
+	opacity: 0.7;
+
+	filter: alpha(opacity=40);
+/* For IE8 and earlier */
+}
+body {
+	line-height: 1.3;
+	color: white;
+	background-color: black;
+	background-image: url("../images/cpo background mfg_1_orig.jpg");
+}
+body.modal-open {
+    overflow: hidden;
+}
+h1, h2, h3, h4, h5 {
+	color: white;
+
+}
+
+pre{
+	font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+.itemtext {
+	text-shadow: 2px 2px 4px #000000;
+}
+.gameCoverSmall {
+	width: 184px;
+	height: 255px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: black;
+	border:solid 0px #fff;
+	box-shadow: 2px 2px 4px black;
+}
+.gameCoverLarge {
+	position: relative;
+	width: 265px;
+	height: 350px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: black;
+	border:solid 0px #fff;
+	box-shadow: 2px 2px 4px black;
+}
+.gameCoverLarge > .button {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	margin-bottom: 0;
+	opacity: 0.8;
+	
+}
+.gameCoverLarge > .button:hover {
+	border-size: 0px;
+	opacity: 1.0;
+}
+.gameCoverLarge > .button:focus {
+	outline: none;
+}
+
+.gameItem:hover{
+	border-color: red;
+	border-size: 3px;
+	transform: scale(1.1, 1.1);
+}
+.gameCoverSmall:hover{
+	border-color: red;
+	border-size: 3px;
+}
+.gameCoverTitle > div{
+	font-weight: bold;
+}
+.gameCoverTitle {
+
+	z-index: 3;
+	position: relative;
+	/* //margin-top: -75px; */
+	padding: 10px;
+	color: white;
+	font-size: .75em;
+	vertical-align: bottom;
+}
+.selectBackground {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	opacity: 1;
+}
+.sub-nav dt a, .sub-nav dd a, .sub-nav li a {
+	padding: 0px;
+	font-size:8pt;
+	color: black;
+}
+.card {
+
+
+	overflow: hidden;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	color: #272727;
+	border-radius: 2px;
+}
+.card .title {
+	line-height: 3rem;
+	font-size: 1.5 rem;
+	font-weight: 300;
+}
+.card .content {
+	padding: 1.3 rem;
+	font-weight: 300;
+	border-radius: 0 0 2px 2px;
+}
+.card p {
+	margin: 0;
+}
+.card .action {
+	border-top: 1px solid rgba(160, 160, 160, 0.2);
+	padding: 1.3 rem;
+}
+.card a {
+	color: #ffab40;
+	margin-right: 1.3 rem;
+	transition: color 0.3s ease;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.card .image {
+	position: relative;
+}
+.card .image .title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 1.3 rem;
+	color: #fff;
+}
+.card .image img {
+	border-radius: 2px 2px 0 0;
+}
+
+/*
+ @-webkit-keyframes zoom {
+ from {
+ -webkit-transform: scale(1,1);
+ }
+ to {
+ -webkit-transform: scale(1.5,1.5);
+ }
+ }
+
+ @keyframes zoom {
+ from {
+ transform: scale(1,1);
+ }
+ to {
+ transform: scale(1.5,1.5);
+ }
+ }
+
+ .selectBackground {
+ -webkit-animation: zoom 50s;
+ animation: zoom 50s;
+ }
+ */
+/*
+  We're using CSS transitions for when
+  the enter and move events are triggered
+  for the element that has the .repeated-item
+  class
+*/
+.repeated-item.ng-enter, .repeated-item.ng-move {
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+
+/*
+ The ng-enter-active and ng-move-active
+ are where the transition destination properties
+ are set so that the animation knows what to
+ animate.
+*/
+.repeated-item.ng-enter.ng-enter-active,
+.repeated-item.ng-move.ng-move-active {
+  opacity: 1;
+}
+
+/*
+  We're using CSS keyframe animations for when
+  the leave event is triggered for the element
+  that has the .repeated-item class
+*/
+.repeated-item.ng-leave {
+  animation: 0.5s my_animation;
+}
+
+@keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+.repeated-item.ng-enter-stagger,
+.repeated-item.ng-leave-stagger,
+.repeated-item.ng-move-stagger {
+  /* notice how we're using animation instead of transition here */
+  -webkit-animation-delay:0.01s;
+  animation-delay:0.01s;
+
+  /* yes we still need to do this too */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+.reveal-modal{
+	background-color: #333333;
+	border: 1px;
+	/* top:60px; */
+
+}
+.reveal-modal:focus{
+outline: none;
+}
+
+.f-dropdown{
+	background-color: #333333;
+	max-width: 500px !important;
+	width: 100% !important;
+	max-height: 600px !important;
+	overflow-y: auto;
+	font-size: 4pt;
+}
+.f-dropdown > li{
+	width: 100%;
+}
+.download_area{
+	position: absolute;
+	bottom:0px;
+	left: 50%;
+}
+.main_content{
+	margin-top: 45px;
+}
+.login-dialog{
+	position: fixed; /* or absolute */
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #333;
+}
+.login-dialog label{
+	color: white;
+}
+.open-more{
+	height: 150px !important;
+}
+.rs-footer{
+	position:fixed; 
+	right: 0px; 
+	bottom:0px; 
+	background-color:#e4e4e4; 
+	color:black; 
+	font-size:8pt; 
+	width: 65%;
+	padding:2px;
+	padding-left:5px;
+	z-index:100;
+	opacity: 0.85;
+	height: 18px;
+	-webkit-transition: height 1s;
+    transition: height 1s;
+
+}
+.rs-footer:hover{
+	opacity: 1;
+}
+.rs-footer-item, .rs-filter-item{
+	padding-left: 15px
+}
+.rs-footer-endcap{
+	position:inherit; 
+	padding-left: 15px; 
+	right:15px;
+}
+.rs-filter-item-active{
+	font-weight:bold;
+}
+.ttab{
+	margin-left: 10px;
+}
+
+.reveal-modal-bg{position:fixed;}
+.reveal-modal{
+	position:fixed;
+	top: 32px !important;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RomSync2 - Rom Web Management Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/foundation.min.css" />
+    <link rel="stylesheet" href="../css/foundation-icons/foundation-icons.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <header></header>
+    <div data-ui-view class="main_content"></div data-ui-view>
+    <script type="text/javascript" src="../libs/npm/jquery.js"></script>
+    <script type="text/javascript" src="../libs/npm/angular.js"></script>
+    <script type="text/javascript" src="../libs/npm/angular-ui-router.js"></script>
+    <script type="text/javascript" src="../libs/npm/ng-infinite-scroll.js"></script>
+    <script type="text/javascript" src="../libs/npm/angular-local-storage.js"></script>
+    <script type="text/javascript" src="../libs/npm/foundation.js"></script>
+    <script type="text/javascript" src="../libs/vendor/mm-foundation-tpls-0.8.0.js"></script>
+    <script type="text/javascript" src="../libs/npm/angular-mocks.js"></script>
+
+    <script type="text/javascript" src="../test/localService/server/romsync.server.js"></script>
+    <script type="text/javascript" src="../components/app.module.js"></script>
+    <script type="text/javascript" src="../components/app.routes.js"></script>
+    <script type="text/javascript" src="../components/services/romsync.service.js"></script>
+    
+    <script type="text/javascript" src="../components/header/header.controller.js"></script>
+    <script type="text/javascript" src="../components/pages/search-view.controller.js"></script>
+    <script type="text/javascript">
+        (function (window) {
+            angular.element(document).ready(function () {
+                angular.bootstrap(document, ['romsync.server']);
+                $(document).foundation('topbar', 'reflow');
+                $(document).foundation();
+            });
+        })(this);
+    </script>
+</body>
+
+</html>

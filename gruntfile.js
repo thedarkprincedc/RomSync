@@ -46,7 +46,20 @@ module.exports = function(grunt) {
                         '!**/*.spec.js'
                     ], dest: 'build/'}
                 ]
-            }
+            },
+            dev: {
+                files: [
+                    { expand: true, flatten: true, src: [
+                        'node_modules/angular/angular.js',
+                        'node_modules/zurb-foundation-5/js/foundation/foundation.js',
+                        'node_modules/jquery/dist/jquery.js',
+                        'node_modules/angular-ui-router/release/angular-ui-router.js',
+                        'node_modules/ng-infinite-scroll/build/ng-infinite-scroll.js',
+                        "node_modules/angular-local-storage/dist/angular-local-storage.js",
+                        "node_modules/angular-mocks/angular-mocks.js"
+                    ], dest: 'webapp/libs/npm/'}
+                ]
+            },
         },
         htmlbuild: {
             build: {
