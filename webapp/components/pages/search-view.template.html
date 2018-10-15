@@ -1,9 +1,62 @@
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="medium-12 columns" ng-cloak>
+            <ul class="breadcrumbs itemtext" style="margin:0px;">
+                 <li><a ng-click="vm.close()">RomSync2</a></li>
+                 <li class="unavailable"><a>{{vm.item.system}}</a></li>
+                 <li class="unavailable"><a href="#">{{vm.item.name}}</a></li>
+            </ul>
+            <h3 class="itemtext">{{vm.item.name}}&nbsp;
+                 <span ng-show="vm.item.year">({{vm.item.year}})</span>
+                 <span class="label {{(vm.isPrimary)?'success':'warning'}}" ng-show="">{{(vm.isPrimary)?'Primary':'Clone'}}</span>
+                 <span class="label success" ng-show="isSynched">{{(isSynched)?"Synched":"Not Synched"}}</span>
+            </h3>
+       </div>
+       <div class="medium-4 columns">
+            <div class="th gameCoverLarge" style="background-image:url({{vm.item.image}});">
+                <a href="{{vm.item.downloadurl}}" class="button small">Download</a>
+            </div>
+       </div>
+       <div class="medium-8 columns"> 
+            <div class="widescreen" 
+                class="youtube-frame-blank"
+                ng-style="vm.style" 
+                style="box-shadow: 2px 2px 4px black;width:100%;height:350px;background-color:black;">
+                <!-- <iframe 
+                    ng-src="{{vm.src|trusted}}"
+                    frameborder="0"
+                    {{(vm.allowfullscreen)?"allowfullscreen":""}}
+                    width="{{vm.width}}"
+                    height="{{vm.height}}">
+                </iframe> -->
+            </div>  
+            <!-- <youtube-video src=vm.item.youtubeurl></youtube-video> -->
+       </div>
+       <div class="medium-12 columns">
+            <hr style="color:#aaaaaa;"/>
+       </div>
+       <div class="row">
+            <div class="medium-4 columns itemtext" >
+                 <span ng-if="vm.item.players"><b>Players:</b> {{vm.item.players}}<br/></span>
+                 <span ng-if="vm.item.genre"><b>Genre(s):</b> {{vm.item.genre}}<br/></span>
+                 <span ng-if="vm.item.manufacturer"><b>Manufacturer:</b> {{vm.item.manufacturer}}<br/></span>
+                 <span ng-if="vm.item.year"><b>Year:</b> {{vm.item.year}}<br/></span>
+                 <span ng-if="vm.item.cloneof==''"><b>Clone of:</b> {{currSelection.cloneof}}<br/></span>
+            </div>
+            <div class="medium-8 columns itemtext" style="padding-bottom:5px;">
+                 <div class="modal-desc">
+                      <p style="Word-wrap: break-word;margin:0px;font-face:9pt;">{{vm.item.overview}}</p>
+                 </div>
+            </div>
+       </div>
+       <a class="close-reveal-modal" ng-click="vm.close()">&#215;</a>
+</script>
+
 <div class="row">
     <ul class="small-block-grid-1 medium-block-grid-4 large-block-grid-6" 
         infinite-scroll="vm.onScrollNextPage()"
         infinite-scroll-distance="vm.scrollDistance" 
         infinite-scroll-disabled="vm.scrollDisabled">
-        <li class="gameItem repeated-item" ng-repeat="game in vm.results.games">
+        <li class="gameItem repeated-item" ng-repeat="game in vm.results.games" ng-click="vm.onClickGameItem(game)">
             <a ng-mouseover="vm.isGameMouseOvered($event, true)" ng-mouseleave="vm.isGameMouseOvered($event, false)">
                 <div class="th gameCoverSmall" style="background-image:url({{game.image}});"></div>
                 <div class="gameCoverTitle itemtext">

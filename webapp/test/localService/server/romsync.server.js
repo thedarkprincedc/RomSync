@@ -35,10 +35,20 @@
         })
         $httpBackend.whenGET(mockserver.urls.SEARCH).respond(function(method, url, data, headers, params){
             var data = null;
+            // var aws = {
+            //     base: "https://s3-us-west-2.amazonaws.com/media.thedarkprincedc.com/",
+            //     list: {
+
+            //     }
+            // }
             var aws = "https://s3-us-west-2.amazonaws.com/media.thedarkprincedc.com/images/";
             switch(params.platform){
-                case "Nintendo 64": data = mockserver.mockdata["games_n64"]; break;
-                case "Arcade": data = mockserver.mockdata["games"]; break;
+                case "Nintendo 64": 
+                    data = mockserver.mockdata["games_n64"];
+                break;
+                case "Arcade": 
+                    data = mockserver.mockdata["games"]; 
+                break;
                 default: data = null;
             }
             data = data.map(function(value){
