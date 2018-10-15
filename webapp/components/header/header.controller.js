@@ -19,9 +19,12 @@
             return response.data;
         }
         function onSearchTypeAhead(search){
-            return romsync.search({
-                name: search, platform: vm.selectedPlatform
-            }).then(onSuccessCallback, onErrorCallback);
+            var query = {
+                name: search, 
+                platform: vm.selected.platform
+            };
+            return romsync.search(query)
+                .then(onSuccessCallback, onErrorCallback);
         }
         function onSelectChange(selectedItem){
             console.log(selectedItem);

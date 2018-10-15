@@ -2,7 +2,7 @@
     <span><b class="itemtext" style="color:white">Rom<span style="color:#0099FF;"><i>Sync</i></span><span style="color:#FF5500;">2</span></b> &copy; 2017</span>
     <span class="rs-footer-item">
         {{vm.selected.platform||'Unknown'}} 
-        <span ng-show="vm.results">( {{vm.selectedlist}} {{vm.results}} )</span>
+        <span>( {{vm.selectedlist || 0}} {{vm.results.length}} )</span>
     </span>
    
     <gametype-filter ng-show="vm.selected.platform == 'Arcade'"></gametype-filter> 

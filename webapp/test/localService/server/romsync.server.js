@@ -6,8 +6,8 @@
         var mockserver = {
             endpoints:{
                 games: $http.get("../models/games.json"),
-                'games-arcade': $http.get("../models/games.json"),
-                'games-n64': $http.get("../models/games.json"),
+                games_arcade: $http.get("../models/games.json"),
+                games_n64: $http.get("../models/games-n64.json"),
                 platforms: $http.get("../models/platforms.json"),
                 years: $http.get("../models/years.json"),
                 decades: $http.get("../models/decades.json"),
@@ -34,7 +34,19 @@
             console.error(error.message)
         })
         $httpBackend.whenGET(mockserver.urls.SEARCH).respond(function(method, url, data, headers, params){
-            return [200, mockserver.mockdata["games"], {}];
+            var data = null;
+            var aws = "https://s3-us-west-2.amazonaws.com/media.thedarkprincedc.com/images/";
+            switch(params.platform){
+                case "Nintendo 64": data = mockserver.mockdata["games_n64"]; break;
+                case "Arcade": data = mockserver.mockdata["games"]; break;
+                default: data = null;
+            }
+            data = data.map(function(value){
+                value.image = [aws,value.filename,".png"].join("");
+                return value;
+            })
+            //AMAZON_S3_BUCKET_URL: "https://s3-us-west-2.amazonaws.com/media.thedarkprincedc.com/images/"
+            return [200, data, {}];
         })
         $httpBackend.whenGET(mockserver.urls.PLATFORMS).respond(function(method, url, data, headers, params){
             return [200, mockserver.mockdata["platforms"], {}];

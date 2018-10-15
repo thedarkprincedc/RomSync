@@ -26,6 +26,7 @@
         vm.$onInit = () => {
             vm.isMoreOpen = false;  
             vm.selected = romsync.selected;
+            vm.results = romsync.results;
             vm.years = CONFIG.years.reverse();
             vm.selectedYear = null;
         };

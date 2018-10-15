@@ -1,6 +1,6 @@
 [{
     "name" : "Street Fighter III",
-    "filename": "88games",
+    "filename": "sfiii",
     "manufacturer" : "Capcom",
     "year": "2009",
     "system": "Arcade",
@@ -8,7 +8,7 @@
     "genre": "Beat Up"
 },{
     "name" : "Street Fighter II",
-    "filename": "88games",
+    "filename": "sf2",
     "manufacturer" : "Capcom",
     "year": "2009",
     "system": "Arcade",

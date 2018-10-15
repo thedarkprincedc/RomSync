@@ -23,13 +23,29 @@
     <!-- /build -->
 
     <!-- build:remove -->
-    <script type="text/javascript" src="libs/library.js"></script>
-    <script type="text/javascript" src="components/app.module.js"></script>
-    <script type="text/javascript" src="components/app.routes.js"></script>
+    <script type="text/javascript" src="libs/npm/jquery.js"></script>
+    <script type="text/javascript" src="libs/npm/angular.js"></script>
+    <script type="text/javascript" src="libs/npm/angular-ui-router.js"></script>
+    <script type="text/javascript" src="libs/npm/ng-infinite-scroll.js"></script>
+    <script type="text/javascript" src="libs/npm/angular-local-storage.js"></script>
+    <script type="text/javascript" src="libs/npm/foundation.js"></script>
+    <script type="text/javascript" src="libs/vendor/mm-foundation-tpls-0.8.0.js"></script>
+    <script type="text/javascript" src="libs/npm/angular-mocks.js"></script>
 
-    <script type="text/javascript" src="components/dropdown-selector/dropdown-selector.controller.js"></script>
-    <script type="text/javascript" src="components/env.js"></script>
-    <script type="text/javascript" src="components/filters/trusted.filter.js"></script>
+   <script type="text/javascript" src="components/app.module.js"></script>
+    <script type="text/javascript" src="components/app.routes.js"></script>
+    <script type="text/javascript" src="components/services/romsync.service.js"></script>
+
+    <script type="text/javascript" src="components/header/header.controller.js"></script>
+    <script type="text/javascript" src="components/footer/footer.controller.js"></script>
+    <script type="text/javascript" src="components/footer/filters/arcade/filter-gametype.controller.js"></script>
+    <script type="text/javascript" src="components/pages/search-view.controller.js"></script>
+    <!-- <script type="text/javascript" src="components/app.module.js"></script>
+    <script type="text/javascript" src="components/app.routes.js"></script> -->
+
+    <!-- <script type="text/javascript" src="components/dropdown-selector/dropdown-selector.controller.js"></script>
+    <script type="text/javascript" src="components/env.js"></script> -->
+    <!-- <script type="text/javascript" src="components/filters/trusted.filter.js"></script>
     <script type="text/javascript" src="components/footer/filters/arcade/filter-gametype.controller.js"></script>
     <script type="text/javascript" src="components/footer/filters/general/filter-decade.controller.js"></script>
     <script type="text/javascript" src="components/footer/filters/general/filter-year.controller.js"></script>
@@ -48,23 +64,40 @@
     <script type="text/javascript" src="components/services/auth.intercepter.service.js"></script>
     <script type="text/javascript" src="components/services/gamesdb.service.js"></script>
     <script type="text/javascript" src="components/services/romsync.service.js"></script>
-    <script type="text/javascript" src="components/youtube-video/youtube-video.controller.js"></script>
+    <script type="text/javascript" src="components/youtube-video/youtube-video.controller.js"></script> -->
   
     <script type="text/javascript">
-        (function (window) {
-            window.__env = {
-                //apiUrl: 'https://192.168.2.27/dev/romsync-server/public'
-                apiUrl: 'http://localhost:8080'
-            }
-            angular.element(document).ready(function () {
+        (function () {
+            var initInjector = angular.injector(['ng']);
+            var $http = initInjector.get('$http');
+            var $q = initInjector.get('$q');
+            $q.all({
+                platforms: $http.get("../models/platforms.json"),
+                decades: $http.get("../models/decades.json"),
+                years: $http.get("../models/years.json")
+            }).then(function (response) {
+                angular.module('config', []).constant('CONFIG', {
+                    platforms: response.platforms.data,
+                    decades: response.decades.data,
+                    years: response.years.data,
+                    selected: {
+                        platform: response.platforms.data[0]
+                    }
+                });
+                angular.element(document).ready(function () {
                 angular.bootstrap(document, ['app.module']);
                 $(document).foundation('topbar', 'reflow');
                 $(document).foundation();
             });
-        })(this);
+            }, function (error) {
+
+            })
+           
+
+        })();
     </script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
        (function(window) {
     'use strict';
     window.__env = window.__env || {};
@@ -86,7 +119,7 @@
             AMAZON_S3_BUCKET_URL: "https://s3-us-west-2.amazonaws.com/media.thedarkprincedc.com/images/"     
         });
 })(this);
-    </script>
+    </script> -->
     <!-- /build -->
 
     <!-- build:script bundle -->
