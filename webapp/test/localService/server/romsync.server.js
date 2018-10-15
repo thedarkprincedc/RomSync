@@ -11,7 +11,7 @@
                 platforms: $http.get("../models/platforms.json"),
                 years: $http.get("../models/years.json"),
                 decades: $http.get("../models/decades.json"),
-
+                games_db: $http.get("../models/gamesdb.xml")
             },
             urls: {
                 SEARCH: /\/api\/games\/search(.*)/,
@@ -19,7 +19,7 @@
                 SEARCH_YOUTUBE: /\/api\/youtube\/search(.*)/,
                 PLATFORMS:/\/api\/platforms(.*)/,
                 YEARS:/\/api\/years(.*)/,
-                DECADES:/\/api\/decades(.*)/,
+                DECADES:/\/api\/decades(.*)/
             },
             mockdata: []
         };
@@ -57,6 +57,10 @@
             })
             //AMAZON_S3_BUCKET_URL: "https://s3-us-west-2.amazonaws.com/media.thedarkprincedc.com/images/"
             return [200, data, {}];
+        })
+        
+        $httpBackend.whenGET(mockserver.urls.SEARCH_GAMESDBNET).respond(function(method, url, data, headers, params){
+            return [200, mockserver.mockdata["games_db"], {}];
         })
         $httpBackend.whenGET(mockserver.urls.PLATFORMS).respond(function(method, url, data, headers, params){
             return [200, mockserver.mockdata["platforms"], {}];

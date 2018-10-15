@@ -8,7 +8,7 @@
 
     function SearchViewController($modal, romsync) {
         var vm = this;
-        function open(item) {
+        function open(item, data) {
             var modalInstance = $modal.open({
                 templateUrl: 'myModalContent.html',
                 controller: function($modalInstance, item){
@@ -21,22 +21,23 @@
                 controllerAs: 'vm',
                 resolve: {
                     item: function () {
-                        item.youtubeurl = "fjirjrni"
-                        item.overview = "fojmrijmrijnijnrijnijnr";
-                        return item;
+                        return $.extend(item, data);
                     }
                 }
             });
 
             modalInstance.result.then(function (selectedItem) {
-            
                 //$scope.selected = selectedItem;
             }, function () {
                 //$log.info('Modal dismissed at: ' + new Date());
             });
         };
         function onClickGameItem(item) {
-            open(item);
+            romsync.searchGamesDB().then(function(response){
+                open(item, response.data);
+            }, function(error){
+
+            }) 
         }
         vm.results = romsync.results;
         vm.onClickGameItem = onClickGameItem;

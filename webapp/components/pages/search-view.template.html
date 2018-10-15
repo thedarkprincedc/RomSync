@@ -21,15 +21,14 @@
                 class="youtube-frame-blank"
                 ng-style="vm.style" 
                 style="box-shadow: 2px 2px 4px black;width:100%;height:350px;background-color:black;">
-                <!-- <iframe 
-                    ng-src="{{vm.src|trusted}}"
+                <iframe 
+                    ng-src="{{vm.item.youtube|trusted}}"
                     frameborder="0"
                     {{(vm.allowfullscreen)?"allowfullscreen":""}}
-                    width="{{vm.width}}"
-                    height="{{vm.height}}">
-                </iframe> -->
+                    width="100%"
+                    height="100%">
+                </iframe>
             </div>  
-            <!-- <youtube-video src=vm.item.youtubeurl></youtube-video> -->
        </div>
        <div class="medium-12 columns">
             <hr style="color:#aaaaaa;"/>

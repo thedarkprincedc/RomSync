@@ -42,7 +42,23 @@
                 method: "GET",
                 params: options,
                 url: "/api/gamesdb/search",
-                //transformResponse: $.parseXML
+                transformResponse : function(data) {
+                    var transformData = {};
+                    var parsedXML = $.parseXML(data);
+                    var games = $(parsedXML).find("Data>Game"); 
+                    debugger;
+                    var url = new URL($(games).find("Youtube")[0].textContent);
+                    var id = url.searchParams.get('v');  
+
+                    transformData = {
+                        overview: $(games).find("Overview")[0].textContent,
+                        genre: $(games).find("Genres>genre")[0].textContent,
+                        players: $(games).find("Players")[0].textContent,
+                        coop: $(games).find("Co-op")[0].textContent,
+                        youtube: "https://www.youtube.com/embed/" + id
+                    } 
+                    return transformData;
+                }
             });
         }
 
