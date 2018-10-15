@@ -4,8 +4,20 @@
         .module('app.module')
         .service('romsync', RomsyncService);
 
-    RomsyncService.$inject = ['$http', '$q', '$state'];
-    function RomsyncService($http, $q, $state) {
+    RomsyncService.$inject = ['$http', '$q', '$state', 'CONFIG'];
+    function RomsyncService($http, $q, $state, CONFIG) {
+        var service = {
+            search: search,
+            searchGamesDB: searchGamesDB,
+            searchYoutube: searchYoutube,
+            platforms: platforms,
+            selected:{
+                platform: CONFIG.selected.platform,
+                year: null,
+                decade: null
+            }
+        };
+      
         function search(options){
             return $http({ url: "/api/games/search" });
         }
@@ -18,6 +30,7 @@
                 //transformResponse: $.parseXML
             });
         }
+        
         function searchYoutube(options){
             return $http({ 
                 method: "GET",
@@ -31,11 +44,6 @@
         function download(options){
             return $http({ url: "/api/systems" });
         } 
-        return{
-            search: search,
-            searchGamesDB: searchGamesDB,
-            searchYoutube: searchYoutube,
-            platforms: platforms
-        }
+        return service;
     }
 })();

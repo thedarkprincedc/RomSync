@@ -1,13 +1,23 @@
 <div class="rs-footer">
     <span><b class="itemtext" style="color:white">Rom<span style="color:#0099FF;"><i>Sync</i></span><span style="color:#FF5500;">2</span></b> &copy; 2017</span>
     <span class="rs-footer-item">
-        {{vm.currentSystem.name||'Unknown'}} 
+        {{vm.selected.platform||'Unknown'}} 
         <span ng-show="vm.results">( {{vm.selectedlist}} {{vm.results}} )</span>
     </span>
-    <!-- //ng-show="vm.system=='Arcade'" -->
-    <gametype-filter ng-show="vm.currentSystem.code == 'arcade'"></gametype-filter> 
+   
+    <gametype-filter ng-show="vm.selected.platform == 'Arcade'"></gametype-filter> 
     <a ng-click="vm.toggleMore()">(More Filters)</a>  
-    <span class="rs-footer-endcap"><a ng-click="vm.onClickScrollToTop()"><i class="fi-arrow-up"></i>&nbsp;Top</a></span>
-    <filter-year></filter-year>
-    <filter-year type-name="'decade'"></filter-year>
+
+    <span class="rs-footer-endcap">
+        <a ng-click="vm.onClickScrollToTop()">
+            <i class="fi-arrow-up"></i>&nbsp;Top
+        </a>
+    </span>
+    <!-- Year Filters -->
+    <dl class="sub-nav">
+        <dt class="sub-nav">Years</dt><br/>
+        <dd ng-repeat="item in vm.years" ng-click="vm.onClickYear($event)" class="{{item == vm.selectedYear?'active':''}}">
+            <a>{{item}}</a>
+        </dd>
+    </dl>
 </div>

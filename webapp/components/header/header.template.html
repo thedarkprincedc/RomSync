@@ -17,7 +17,7 @@
                     <div class="row collapse">
                         <div class="small-10 columns">
                             <input type="text" class="form-control searchbox" 
-                                ng-model="vm.selected" 
+                                ng-model="vm.searchQuery" 
                                 placeholder="{{vm.placeholder}}"
                                 typeahead="item as item.name for item in vm.onSearchTypeAhead($viewValue)"
                                 typeahead-wait-ms="vm.waitTime" 
@@ -32,7 +32,7 @@
             </ul>
             <ul class="right">
                 <li class="has-dropdown not-click">
-                    <a><i class="fi-thumbnails"></i>&nbsp<b>{{vm.selectedPlatform}}</b></a>
+                    <a><i class="fi-thumbnails"></i>&nbsp<b>{{vm.selected.platform}}</b></a>
                     <ul class="dropdown">
                         <li ng-repeat="system in vm.platforms">
                             <a ng-click="vm.onSelectPlatform(system)">{{system}}</a>

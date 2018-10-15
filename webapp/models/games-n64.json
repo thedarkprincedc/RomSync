@@ -1,0 +1,25 @@
+[{
+    "name" : "Mystical Ninjaox",
+    "filename": "88games",
+    "manufacturer" : "Konami",
+    "year": "1997",
+    "system": "N64",
+    "players": 1,
+    "genre": "Platformer"
+},{
+    "name" : "Super Mario 64",
+    "filename": "88games",
+    "manufacturer" : "Nintendo",
+    "year": "1996",
+    "system": "N64",
+    "players": 1,
+    "genre": "Platformer"
+},{
+    "name" : "Star Fox",
+    "filename": "88games",
+    "manufacturer" : "Nintendo",
+    "year": "1996",
+    "system": "N64",
+    "players": 4,
+    "genre": "Flight Sim"
+}]

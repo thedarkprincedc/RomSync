@@ -13,8 +13,8 @@
 
 <body>
     <header></header>
-        <div data-ui-view class="main_content"></div data-ui-view>
-
+    <div data-ui-view class="main_content"></div data-ui-view>
+    <footer></footer>
     <script type="text/javascript" src="../libs/npm/jquery.js"></script>
     <script type="text/javascript" src="../libs/npm/angular.js"></script>
     <script type="text/javascript" src="../libs/npm/angular-ui-router.js"></script>
@@ -28,17 +28,39 @@
     <script type="text/javascript" src="../components/app.module.js"></script>
     <script type="text/javascript" src="../components/app.routes.js"></script>
     <script type="text/javascript" src="../components/services/romsync.service.js"></script>
-    
+
     <script type="text/javascript" src="../components/header/header.controller.js"></script>
+    <script type="text/javascript" src="../components/footer/footer.controller.js"></script>
+    <script type="text/javascript" src="../components/footer/filters/arcade/filter-gametype.controller.js"></script>
     <script type="text/javascript" src="../components/pages/search-view.controller.js"></script>
+
     <script type="text/javascript">
-        (function (window) {
-            angular.element(document).ready(function () {
-                angular.bootstrap(document, ['romsync.server']);
-                $(document).foundation('topbar', 'reflow');
-                $(document).foundation();
-            });
-        })(this);
+        (function () {
+            var initInjector = angular.injector(['ng']);
+            var $http = initInjector.get('$http');
+            var $q = initInjector.get('$q');
+            $q.all({
+                platforms: $http.get("../models/platforms.json"),
+                decades: $http.get("../models/decades.json"),
+                years: $http.get("../models/years.json")
+            }).then(function (response) {
+                angular.module('config', []).constant('CONFIG', {
+                    platforms: response.platforms.data,
+                    decades: response.decades.data,
+                    years: response.years.data,
+                    selected: {
+                        platform: response.platforms.data[0]
+                    }
+                });
+                angular.element(document).ready(function () {
+                    angular.bootstrap(document, ['romsync.server']);
+                    $(document).foundation('topbar', 'reflow');
+                    $(document).foundation();
+                });
+            }, function (error) {
+
+            })
+        })();
     </script>
 </body>
 

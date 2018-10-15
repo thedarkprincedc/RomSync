@@ -8,9 +8,10 @@
             controllerAs: 'vm'
         });
 
-    HeaderController.$inject = ['$rootScope', 'romsync'];
-    function HeaderController($rootScope, romsync) {
+    HeaderController.$inject = ['$rootScope', 'romsync', 'CONFIG'];
+    function HeaderController($rootScope, romsync, CONFIG) {
         var vm = this;
+    
         function onErrorCallback(response){
             alert("Error: "+ response.data);
         }
@@ -25,23 +26,24 @@
         function onSelectChange(selectedItem){
             console.log(selectedItem);
             //****************/
-            vm.selected = null;
+            $rootScope.platform = selectedItem;
+            vm.searchQuery = null;
         }
         function getPlatforms(){
             return romsync.platforms().then(onSuccessCallback, onErrorCallback)
         }
         function onSelectPlatform(platform){
-            vm.selectedPlatform = platform;
+            vm.selected.platform = platform;
         }
+        
         //////////////
         vm.$onInit = () => {    
             vm.waitTime = 1200;
             vm.minLength = 3;
             vm.placeholder = "Search for games";
-            romsync.platforms().then(function(response){
-                vm.platforms = response.data;
-                vm.selectedPlatform = response.data[0];
-            }, onErrorCallback);
+            vm.platforms = CONFIG.platforms;
+            vm.selected = romsync.selected;
+            vm.searchQuery = null;
         };
         vm.$onChanges = function(changesObj) { };
         vm.$onDestroy = function() { };

@@ -1,3 +1,20 @@
-<game-list></game-list>
-<footer></footer>
-t5gm5mogkm5okgmokm
+<div class="row">
+    <ul class="small-block-grid-1 medium-block-grid-4 large-block-grid-6" 
+        infinite-scroll="vm.onScrollNextPage()"
+        infinite-scroll-distance="vm.scrollDistance" 
+        infinite-scroll-disabled="vm.scrollDisabled">
+        <li class="gameItem repeated-item" ng-repeat="game in vm.games">
+            <a ng-mouseover="vm.isGameMouseOvered($event, true)" ng-mouseleave="vm.isGameMouseOvered($event, false)">
+                <div class="th gameCoverSmall" style="background-image:url({{game.imageurl}});"></div>
+                <div class="gameCoverTitle itemtext">
+                    <center>
+                        <div ng-show="game.name">{{game.name}}</div>
+                        <span ng-show="game.manufacturer">{{game.manufacturer}}
+                            <span ng-show="game.year">({{game.year}})</span>
+                        </span>
+                    </center>
+                </div>
+            </a>
+        <li>
+    </ul>
+</div>
