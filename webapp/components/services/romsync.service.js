@@ -4,8 +4,8 @@
         .module('app.module')
         .service('romsync', RomsyncService);
 
-    RomsyncService.$inject = ['$rootScope','$http', 'CONFIG'];
-    function RomsyncService($rootScope, $http,CONFIG) {
+    RomsyncService.$inject = ['$rootScope','$http', 'CONFIG', 'error'];
+    function RomsyncService($rootScope, $http,CONFIG, error) {
         var service = {
             search: search,
             searchGamesDB: searchGamesDB,
@@ -29,12 +29,21 @@
                 console.log(service.results);
             });
         }, true);
+        function onErrorCallback(response){
+            error.addWarning({msg: response.data})
+            //alert("Error: "+ response.data);
+            
+        }
+        function onSuccessCallback(response){
+            error.addSuccess({msg: response.data.length})
+            return response;
+        }
         function search(options){
             return $http({ 
                 method: "GET",
                 params: options,
                 url: "/api/games/search" 
-            });
+            }).then(onSuccessCallback, onErrorCallback);
         }
        
         function searchGamesDB(options){
@@ -46,7 +55,6 @@
                     var transformData = {};
                     var parsedXML = $.parseXML(data);
                     var games = $(parsedXML).find("Data>Game"); 
-                    debugger;
                     var url = new URL($(games).find("Youtube")[0].textContent);
                     var id = url.searchParams.get('v');  
 

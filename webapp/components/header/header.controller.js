@@ -8,12 +8,12 @@
             controllerAs: 'vm'
         });
 
-    HeaderController.$inject = ['$rootScope', 'romsync', 'CONFIG'];
-    function HeaderController($rootScope, romsync, CONFIG) {
+    HeaderController.$inject = ['$rootScope', 'romsync', 'CONFIG','error'];
+    function HeaderController($rootScope, romsync, CONFIG, error) {
         var vm = this;
     
         function onErrorCallback(response){
-            alert("Error: "+ response.data);
+            //alert("Error: "+ response.data);
         }
         function onSuccessCallback(response){
             return response.data;
@@ -28,6 +28,7 @@
         }
         function onSelectChange(selectedItem){
             console.log(selectedItem);
+          
             //****************/
             $rootScope.platform = selectedItem;
             vm.searchQuery = null;

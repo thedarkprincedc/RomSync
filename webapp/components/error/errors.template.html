@@ -1,0 +1,5 @@
+<div style="width:25%; right:0px; bottom:0; position:fixed;">
+    <alert ng-repeat="alert in vm.alerts" type="alert.type" close="vm.closeAlert($index)" ng-show="alert.active!==false">
+        <b>{{alert.prefix}}:</b> {{alert.msg}}
+    </alert>
+</div>

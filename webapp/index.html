@@ -17,6 +17,8 @@
 <body>
     <header></header>
     <ui-view class="main_content"></ui-view>
+    <errorlist></errorlist>
+    <footer></footer>
     <!-- <div data-ui-view class="main_content"></div data-ui-view> -->
     <!-- build:remove -->
     <!-- <script data-main="components/app-config" src="../libs/vendor/require.js"></script> -->
@@ -35,11 +37,13 @@
    <script type="text/javascript" src="components/app.module.js"></script>
     <script type="text/javascript" src="components/app.routes.js"></script>
     <script type="text/javascript" src="components/services/romsync.service.js"></script>
+    <script type="text/javascript" src="components/services/error.service.js"></script>
 
     <script type="text/javascript" src="components/header/header.controller.js"></script>
     <script type="text/javascript" src="components/footer/footer.controller.js"></script>
     <script type="text/javascript" src="components/footer/filters/arcade/filter-gametype.controller.js"></script>
     <script type="text/javascript" src="components/pages/search-view.controller.js"></script>
+    <script type="text/javascript" src="components/error/errors.controller.js"></script>
     <!-- <script type="text/javascript" src="components/app.module.js"></script>
     <script type="text/javascript" src="components/app.routes.js"></script> -->
 
