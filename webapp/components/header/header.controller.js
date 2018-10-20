@@ -28,7 +28,8 @@
         }
         function onSelectChange(selectedItem){
             console.log(selectedItem);
-          
+           
+            $rootScope.$broadcast("searchResultClicked", selectedItem);
             //****************/
             $rootScope.platform = selectedItem;
             vm.searchQuery = null;

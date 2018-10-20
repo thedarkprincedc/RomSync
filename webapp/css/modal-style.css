@@ -1,0 +1,97 @@
+@media only screen and (min-width: 40.0625em) {
+    div.reveal-modal{
+        position: absolute;
+        top:35px;
+    }
+}
+@media only screen and (max-width: 40.0625em) {
+    div.reveal-modal{
+        overflow: scroll;
+        height:100%; 
+    }
+    .lg-boxart{
+        width:100% !important;
+    }
+    .widescreen{
+        display: none;
+	}
+	.modal-desc{
+		padding-bottom: 80px;
+	}
+}
+.lg-boxart{
+    position: relative;
+	width: 265px;
+	height: 350px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: black;
+	border:solid 0px #fff;
+	box-shadow: 2px 2px 4px black; 
+}
+.lg-boxart > .button {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	margin: 0;
+	opacity: 0.8;
+}
+.lg-boxart > .button {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	margin: 0;
+	opacity: 0.8;
+}
+.lg-boxart > .button:hover {
+	border-size: 0px;
+	opacity: 1.0;
+}
+.lg-boxart > .button:focus {
+	outline: none;
+}
+.sm-boxart {
+	display: inline-block;
+	position: relative;
+	width: 184px;
+	height: 255px;
+	margin:25px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: black;
+	border:solid 0px #fff;
+	box-shadow: 2px 2px 4px black; 
+}
+.locc{
+	display:block;
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	margin-bottom:2%;
+}
+.game-description-modal{
+
+}
+ul.breadcrumbs{
+    padding: 0px !important;
+}
+
+/* .modal-desc{
+	overflow: scroll;
+	height:175px;
+} */
+
+/* .modal-desc::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+.modal-desc::-webkit-scrollbar-corner {
+	color: #272727;
+}
+.modal-desc::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+} */

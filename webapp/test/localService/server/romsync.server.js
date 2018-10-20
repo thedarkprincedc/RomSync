@@ -49,7 +49,7 @@
                 case "Arcade": 
                     data = mockserver.mockdata["games"]; 
                 break;
-                default: data = null;
+                default: data = [];
             }
             data = data.map(function(value){
                 value.image = [aws,value.filename,".png"].join("");

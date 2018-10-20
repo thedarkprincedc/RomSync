@@ -22,7 +22,7 @@
                                 typeahead="item as item.name for item in vm.onSearchTypeAhead($viewValue)"
                                 typeahead-wait-ms="vm.waitTime" 
                                 typeahead-min-length="vm.minLength"
-                                typeahead-on-select="vm.onSelectChange(vm.selected)"
+                                typeahead-on-select="vm.onSelectChange(vm.searchQuery)"
                                 typeahead-template-url="customTemplate.html" 
                             />
                             <i ng-show="vm.loadingLocations" class="glyphicon glyphicon-refresh"></i>

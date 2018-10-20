@@ -32,23 +32,6 @@ div.scroll {
 
     overflow: scroll;
 }
-.modal-desc{
-	overflow: scroll;
-	height:175px;
-}
-
-.modal-desc::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 7px;
-}
-.modal-desc::-webkit-scrollbar-corner {
-	color: #272727;
-}
-.modal-desc::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, .5);
-  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-}
 
 #loadingDiv{
 	position:fixed;
@@ -107,32 +90,6 @@ pre{
 	background-color: black;
 	border:solid 0px #fff;
 	box-shadow: 2px 2px 4px black;
-}
-.gameCoverLarge {
-	position: relative;
-	width: 265px;
-	height: 350px;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: black;
-	border:solid 0px #fff;
-	box-shadow: 2px 2px 4px black;
-}
-.gameCoverLarge > .button {
-	position: absolute;
-	width: 100%;
-	bottom: 0;
-	margin-bottom: 0;
-	opacity: 0.8;
-	
-}
-.gameCoverLarge > .button:hover {
-	border-size: 0px;
-	opacity: 1.0;
-}
-.gameCoverLarge > .button:focus {
-	outline: none;
 }
 
 .gameItem:hover{
@@ -364,8 +321,11 @@ outline: none;
 	margin-left: 10px;
 }
 
-.reveal-modal-bg{position:fixed;}
-.reveal-modal{
+/* .reveal-modal-bg{position:fixed;} */
+/* .reveal-modal{
 	position:fixed;
 	top: 32px !important;
-}
+} */
+/* @media only screen and (min-width: 40.0625em) {
+	 top: 32px !important; 
+}*/

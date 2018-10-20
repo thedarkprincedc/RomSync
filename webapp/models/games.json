@@ -1,6 +1,6 @@
 [{
     "name" : "Street Fighter III",
-    "filename": "sfiii3",
+    "filename": "88games",
     "manufacturer" : "Capcom",
     "year": "2009",
     "system": "Arcade",
@@ -8,7 +8,7 @@
     "genre": "Beat Up"
 },{
     "name" : "Street Fighter II",
-    "filename": "sf2",
+    "filename": "88games",
     "manufacturer" : "Capcom",
     "year": "2009",
     "system": "Arcade",
@@ -16,6 +16,102 @@
     "genre": "Beat Up"
 },{
     "name" : "Street Fighter",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter III",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter II",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter III",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter II",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter III",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter II",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter III",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter II",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter III",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter II",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter III",
+    "filename": "88games",
+    "manufacturer" : "Capcom",
+    "year": "2009",
+    "system": "Arcade",
+    "players": 2,
+    "genre": "Beat Up"
+},{
+    "name" : "Street Fighter II",
     "filename": "88games",
     "manufacturer" : "Capcom",
     "year": "2009",
